@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Voucher</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #3a2a1f;
+            color: #f8e5c0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .voucher {
+            width: 700px;
+            padding: 20px;
+            background-color: #3a2a1f;
+            border: 2px solid #8c6b46;
+            text-align: center;
+            color: #f8e5c0;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+        }
+        .voucher h1 {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .voucher h2 {
+            font-size: 32px;
+            margin: 5px 0 20px;
+        }
+        .voucher p {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        .voucher .amount {
+            font-size: 60px;
+            font-weight: bold;
+            color: #f8e5c0;
+            margin: 20px 0;
+        }
+        .voucher .terms {
+            font-size: 16px;
+            color: #c7a77d;
+        }
+        .voucher .code {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 30px;
+        }
+        .voucher img {
+            width: 200px;
+            margin: 20px 0;
+        }
+    </style>
+    <script>
+        // Function to generate a random unique code
+        function generateVoucherCode() {
+            const prefix = "CR";
+            const uniquePart = Math.random().toString(36).substring(2, 8).toUpperCase();
+            return `${prefix}${uniquePart}`;
+        }
+
+        // Update the voucher code on page load
+        window.onload = function () {
+            const voucherCodeElement = document.getElementById("voucher-code");
+            voucherCodeElement.textContent = "VOUCHER CODE: " + generateVoucherCode();
+        };
+    </script>
+</head>
+<body>
+    <div class="voucher">
+        <h1>SPECIALLY FOR YOU</h1>
+        <h2>GIFT VOUCHER</h2>
+        <img src="cr.png" alt="Calcutta Retro Logo">
+        <p>for any purchase in our store</p>
+        <div class="amount">₹150</div>
+        <p>VALID UNTIL March 2025</p>
+        <p class="code" id="voucher-code">VOUCHER CODE: </p>
+        <p class="terms">Terms and conditions apply.</p>
+    </div>
+</body>
+</html>
